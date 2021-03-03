@@ -1,0 +1,101 @@
+#title {
+    color: hotpink;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 70px;
+    padding: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+form {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div {
+    display: block;
+    text-align: center;
+}
+
+input {
+    text-align: center;
+    width: 400px;
+    height: 50px;
+    font-size: 40px;
+    border: 3px solid green;
+    color: hotpink;
+    /* caret-color: transparent; */
+    ;
+}
+
+::placeholder {
+    color: hotpink;
+}
+
+h2 {
+    display: inline-block;
+    font-family: sans-serif;
+    padding: 0px 10px;
+    color: green;
+    font-size: 18px
+}
+
+#newBook {
+    background-color: white;
+    display: inline-block;
+    border: 3px solid green;
+    font-family: sans-serif;
+    font-size: 15px;
+    color: hotpink;
+    padding: 5px 20px;
+}
+
+#cantFind {
+    position: relative;
+    padding: 100px;
+}
+
+#wrapper{
+    /* display: block; */
+    /* text-align: center; */
+    /* max-width: 450px; */
+    position: relative;
+    max-width: 450px;
+    margin: 1000px;
+}
+
+.search-input .autocom-box{
+    padding: 0px;
+    max-height: infinite;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.search-input.active .autocom-box{
+    padding: 10px 8px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.autocom-box li{
+    list-style: none;
+    padding: 2px 12px;
+    width: 100%;
+    cursor: default;
+    border-radius: 3px;
+    color: darkgreen;
+    font-family: sans-serif;
+    display: none;
+}
+
+.search-input.active .autocom-box li {
+    display: block;
+}
+
+.autocom-box li:hover{
+    background: rgb(255, 203, 229);
+}

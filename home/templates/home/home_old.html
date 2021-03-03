@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Explain My Book</title>
+        <link href="{% static 'home/styles.css' %}" rel="stylesheet">
+        <script src="{% static 'home/preprocess.js' %}"></script>
+        <script>
+            var suggestions = "{{ suggestions }}";
+            suggestions = processList(suggestions);
+    </script>
+    </head>
+    <body>
+        <a href="">
+            <h1>
+                Explain My Book
+            </h1>
+        </a>
+        <div class="wrapper">
+            <div class="search-input">
+                <input type="text" placeholder="Search the library">
+                <div class="autocom-box"></div>
+                <script src="{% static 'home/script.js' %}"></script>
+            </div>
+        </div>
+        <div id="cantFind">
+            <h2>Can't find your book?</h2>
+            <a href="">
+                <button id=newBook type="button">
+                    Add a New Book
+                </button>
+            </a>
+        </div>
+    </body>
+</html>

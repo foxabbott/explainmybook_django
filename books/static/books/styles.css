@@ -1,0 +1,106 @@
+#title {
+    color: hotpink;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 70px;
+    margin-bottom: 0px;
+}
+
+#author {
+    font-size: 40px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.post{
+    border: 3px solid hotpink;
+    /* margin: 5px; */
+}
+.content {
+    background-color: rosybrown;
+    flex: 0.67;
+    align-self: stretch;
+    /* text-overflow: ellipsis; */
+    overflow-x: auto;
+}
+.score {
+    background-color: thistle;
+    flex: 0.08;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 25px;
+}
+#header{
+    font-size: 25px;
+}
+#body {
+    font-size: 18px;
+}
+.labels {
+    background-color: powderblue;
+    flex: 0.25;
+    align-self: stretch;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+#titleAuthor {
+    text-align: center;
+}
+
+h2 {
+    display: inline-block;
+    font-family: sans-serif;
+    padding: 0px 10px;
+    color: darkgreen;
+}
+
+#newPost {
+    background-color: white;
+    display: inline-block;
+    border: 3px solid darkgreen;
+    font-family: sans-serif;
+    font-size: 15px;
+    color: hotpink;
+    padding: 5px 20px;
+}
+
+#cantFind {
+    padding: 60px;
+}
+
+.search-input .autocom-box{
+    padding: 0px;
+    max-height: infinite;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.search-input.active .autocom-box{
+    padding: 10px 8px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.autocom-box li{
+    padding: 2px 12px;
+    cursor: default;
+    border-radius: 3px;
+    color: darkgreen;
+    font-family: sans-serif;
+    display: none;
+}
+
+.search-input.active .autocom-box li {
+    display: block;
+}
+
+.autocom-box li:hover{
+    background: rgb(255, 203, 229);
+}

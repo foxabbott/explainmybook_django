@@ -1,0 +1,72 @@
+{% extends "books/layout.html" %}
+{% load static %}
+
+{% block body %}
+    
+    <link href="{% static 'books/styles.css' %}" rel="stylesheet">
+    <style>
+        .postContent {
+            background-color: rosybrown;
+            flex: 0.7;
+            align-self: stretch;
+            display: flex;
+            align-items: center;
+            text-overflow: ellipsis;
+            overflow-x: auto;
+        }
+        .score {
+            background-color: thistle;
+            flex: 0.05;
+            align-self: stretch;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .postLabels {
+            background-color: powderblue;
+            flex: 0.25;
+            align-self: stretch;
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+    </style>
+
+    <div id="titleAuthor">
+        <h1 id="title">{{ book.title }}</h1>
+        <h2 id="author">{{ book.author }}</h1>
+    </div>
+
+    <h2>Posts</h2>
+    {% for post in posts %}
+            <div class="post" style="align-items: center; display: flex; overflow: hidden; font-family: sans-serif; color: darkgreen; margin: 5px">
+                <div class="postContent">
+                    <!-- <div> -->
+                        {{ post.header }} <br/><br/>
+                        {{ post.body }} <!-- have this part a bit smaller -->
+                    <!-- </div> -->
+                </div>
+                <div class="postLabels">
+                    <!-- <div> -->
+                        {{ post.user }} <br/><br/>
+                        {{ post.date }} <br/>
+                    <!-- </div> -->
+                </div>
+                <div class="score">
+                    <!-- <div> -->
+                        {{ post.score }}
+                    <!-- </div> -->
+                </div>
+            </div>
+    {% empty %}
+        No posts.
+    {% endfor %}
+    <div id="cantFind">
+        <h2>Can't find what you're looking for?</h2>
+            <button id=newPost type="button">
+                Ask a question
+            </button>
+    </div>
+{% endblock %}

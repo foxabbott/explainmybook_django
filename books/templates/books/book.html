@@ -1,0 +1,85 @@
+{% extends "books/layout.html" %}
+{% load static %}
+
+{% block body %}
+    
+    <link href="{% static 'books/styles.css' %}" rel="stylesheet">
+
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: white;
+            font-family: sans-serif;
+        }
+
+        #homeButton {
+            float: left;
+            font-weight: bold;
+            font-size: 40px;
+        }
+
+        #registerButton {
+            float: right;
+        }
+
+        li a {
+            display: block;
+            color: hotpink;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: lightgreen;
+        }
+    </style>
+
+
+    <ul>
+        <li><a id="homeButton" href="{% url 'home' %}">Explain<br/>My Book</a></li>
+        <li><a id="registerButton" href="{% url 'register' %}">Create<br/>Account</li></a>
+    </ul>
+
+
+    <a href="">
+        <div id="titleAuthor">
+            <h1 id="title">{{ book.title }}</h1>
+            <h2 id="author">{{ book.author }}</h1>
+        </div>
+    </a>
+
+    <h2>Posts</h2>
+    {% for post in posts %}
+        <a href="{% url 'post' book.id post.id %}">
+            <div class="post" style="align-items: center; display: flex; overflow: hidden; font-family: sans-serif; color: darkgreen; margin: 5px">
+                <div class="content">
+                    <span id="header"> {{ post.header }}</span>
+                    <br/><br/> 
+                    <span id="body">{{ post.body }}</span>
+                </div>
+                <div class="labels">
+                        {{ post.user }} <br/><br/>
+                        {{ post.date }} <br/>
+                </div>
+                <div class="score">
+                        {{ post.score }}
+                </div>
+            </div>
+        </a>
+    {% empty %}
+        No posts.
+    {% endfor %}
+    <div id="cantFind">
+        <h2>Can't find what you're looking for?</h2>
+        <a href="{% url 'newpost' book.id %}">
+            <button id=newPost type="button">
+                Ask a question
+            </button>
+        </a>
+    </div>
+    <a href="{% url 'booklist' %}">Back to list of books...</a>
+{% endblock %}
